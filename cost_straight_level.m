@@ -5,8 +5,8 @@ function F0 = cost_straight_level(Z)
 X = Z(1:9);     % Extract states
 U = Z(10:16);   % Extract controls (3 surfaces + 4 throttles)
 
-% Calculate state derivatives
-xdot = TRIMRCAM(X, U);
+% Calculate state derivatives using RCAM_mod (NOT TRIMRCAM)
+xdot = RCAM_mod(X, U);
 
 % Calculate flight parameters
 Va = sqrt(X(1)^2 + X(2)^2 + X(3)^2);
